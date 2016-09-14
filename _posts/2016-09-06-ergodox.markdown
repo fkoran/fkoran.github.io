@@ -173,6 +173,7 @@ The SVGs are up on [my github]( https://github.com/fkoran/ergodox-acrylic-svg ).
 ![stack of acrylic](/images/ergodox/layer_all_left_small.jpg)
 
 These are the layer thicknesses I used. The Gateron switches fit perfectly with 4.5mm acrylic on layer 3. Be sure if you're using THT diodes to use a material for layer 4 that's a bit thicker than 4.5mm.
+
 - Layer 1 (top) - 3mm
 - Layer 2 (spacer) - 4.5mm
 - Layer 3 (switch plate) - 4.5mm
