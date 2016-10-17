@@ -17,5 +17,5 @@ I have hands-on experience with board and silicon bring-up, feature validation, 
 |
 [Resume](/assets/Forrest_Koran.pdf)
 |
-[Blog](/2016/09/06/ergodox.html)
+[Blog](/)
 
