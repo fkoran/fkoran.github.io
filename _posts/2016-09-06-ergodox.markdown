@@ -45,22 +45,23 @@ I purchased parts on DigiKey per the [ergodox.org]( http://ergodox.org ) list, w
 {:/comment}
 
 
-- Ergodox PCB - [mechanicalkeyboards.com]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=537 )
-- Teesny 2.0 with headers - [mechanicalkeyboards.com]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=568 )
-- 10x Gateron Brown Keyswitch - Plate Mount - Pack of 10 - [mechanicalkeyboards.com]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=1640 )
-- DSA Keycaps - Ergodox Base Set and Ergodox Modifier Set - [pimpmykeyboard.com]( http://pimpmykeyboard.com/dsa-pbt-abs-blank-keycap-sets/ )
-- 4 Conductor 3.5mm TRRS Audio Cable - [amazon]( http://amzn.to/2cAZh8s )
-- CP-43514 4 Conductor 3.5mm TRRS Audio Jack - [digikey]( http://www.digikey.com/product-detail/en/cui-inc/SJ-43514/CP-43514-ND/368146 )
-- WM17115-ND USB Mini-B Receptacle - [digikey]( http://www.digikey.com/product-detail/en/molex-llc/0548190519/WM17115-ND/773802 ) - **often out of stock**
-- MCP23018 IO Expander - [digikey]( http://www.digikey.com/product-detail/en/microchip-technology/MCP23018-E-SP/MCP23018-E-SP-ND/1999505 )
-- 0.1uF Through-hole Ceramic Capacitor - [digikey]( http://www.digikey.com/product-detail/en/vishay-bc-components/K104K10X7RF5UH5/BC2665CT-ND/2356879 )
-- 2x 2.2kΩ Through-hole Resistor - [digikey]( http://www.digikey.com/product-detail/en/yageo/CFR-25JB-52-2K2/2.2KQBK-ND/666 )
-- 4x 220Ω Through-hole Resistor - [digikey]( http://www.digikey.com/product-detail/en/yageo/CFR-25JB-52-220R/220QBK-ND/1295 )
-- <strike>100x Axial Through-hole Diode</strike> - [digikey]( http://www.digikey.com/product-detail/en/fairchild-semiconductor/1N4148/1N4148FS-ND/458603 ) - **recommend substituting the surface mount diodes listed below:**
-- 100x SOT123 Surface Mount Diode - [digikey]( http://www.digikey.com/product-detail/en/diodes-incorporated/1N4148W-7-F/1N4148W-FDICT-ND/815280 )
-- *3mm Green LED - [digikey]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4236N/160-1144-ND/214443 ) (optional)*
-- *3mm Yellow LED - [digikey]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4256N/160-1147-ND/151820 ) (optional)*
-- *3mm Red LED - [digikey]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4266N/160-1034-ND/121770 ) (optional)*
+- [Ergodox PCB]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=537 )
+- [Teesny 2.0 with headers]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=568 )
+- [10x Gateron Brown Keyswitch - Plate Mount - Pack of 10]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=1640 )
+- [DSA Keycaps - Ergodox Base Set and Ergodox Modifier Set]( http://pimpmykeyboard.com/dsa-pbt-abs-blank-keycap-sets/ )
+- [4 Conductor 3.5mm TRRS Audio Cable]( http://amzn.to/2cAZh8s )
+- [CP-43514 4 Conductor 3.5mm TRRS Audio Jack]( http://www.digikey.com/product-detail/en/cui-inc/SJ-43514/CP-43514-ND/368146 )
+- [WM17115-ND USB Mini-B Receptacle]( http://www.digikey.com/product-detail/en/molex-llc/0548190519/WM17115-ND/773802 ) - **often out of stock**
+- [MCP23018 IO Expander]( http://www.digikey.com/product-detail/en/microchip-technology/MCP23018-E-SP/MCP23018-E-SP-ND/1999505 )
+- [0.1uF Through-hole Ceramic Capacitor]( http://www.digikey.com/product-detail/en/vishay-bc-components/K104K10X7RF5UH5/BC2665CT-ND/2356879 )
+- [2x 2.2kΩ Through-hole Resistor]( http://www.digikey.com/product-detail/en/yageo/CFR-25JB-52-2K2/2.2KQBK-ND/666 )
+- [4x 220Ω Through-hole Resistor]( http://www.digikey.com/product-detail/en/yageo/CFR-25JB-52-220R/220QBK-ND/1295 )
+- [<strike>100x Axial Through-hole Diode</strike>]( http://www.digikey.com/product-detail/en/fairchild-semiconductor/1N4148/1N4148FS-ND/458603 ) - **recommend substituting the surface mount diodes listed below:**
+- [100x SOT123 Surface Mount Diode ]( http://www.digikey.com/product-detail/en/diodes-incorporated/1N4148W-7-F/1N4148W-FDICT-ND/815280 )
+- [3mm Green LED]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4236N/160-1144-ND/214443 ) - **optional**
+- [3mm Yellow LED ]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4256N/160-1147-ND/151820 ) - **optional**
+- [3mm Red LED ]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4266N/160-1034-ND/121770 ) - **optional**
+
 
 
 {::comment}
@@ -148,7 +149,7 @@ I purchased parts on DigiKey per the [ergodox.org]( http://ergodox.org ) list, w
 </table>
 {:/comment}
 
-I would recommend substituting surface mount parts for the THT diodes. They're easier to solder and trim and will result in a cleaner final product with wider mechanical clearances. Unfortunately the mini-USB connecter often goes out of stock, so be aware that it may not be available.
+If I were building this again I would substitute surface mount parts in place of the through hole diodes. They're easier to solder and trim and will result in a cleaner final product with wider mechanical clearances. Be aware that the mini-USB B connecter often goes out of stock.
 
 I chose to use Gateron Brown switches. They seem widely regarded as a better quality clone of the gold standard Cherry MX brand and have a [light, tactile throw](http://www.wasdkeyboards.com/mechanical-keyboard-guide#best) without being clicky.
 
@@ -168,32 +169,34 @@ The SVGs are up on [my github]( https://github.com/fkoran/ergodox-acrylic-svg ).
 
 [<img src="/images/ergodox/layer_all_left_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/layer_all_left.jpg)
 
-These are the layer thicknesses I used. The Gateron switches fit perfectly with 4.5mm acrylic on layer 3. Be sure if you're using THT diodes to use a material for layer 4 that's a bit thicker than 4.5mm.
+These are the layer thicknesses I used. The Gateron switches fit perfectly with 4.5mm acrylic on layer 3. Be sure if you're using THT diodes that layer 4 is a bit thicker than 4.5mm.
 
-- Layer 1 (top) - 3mm
-- Layer 2 (spacer) - 4.5mm
-- Layer 3 (switch plate) - 4.5mm
-- Layer 4 (spacer) - 4.5mm
-- Layer 5 (bottom) - 3mm
+- Top - 3mm
+- Spacer - 4.5mm
+- Switch plate - 4.5mm
+- Spacer - 4.5mm
+- Bottom - 3mm
 
 
 
 # Assembly Instructions
 
-I used the [Massdrop](https://keyboard-configurator.massdrop.com/ext/ergodox/assembly.php) assembly instructions as a reference. If this is your first soldering project it's worth flipping through the fantastic guide [Soldering is Easy (8 page pdf)]( https://mightyohm.com/files/soldercomic/FullSolderComic_EN.pdf )
+I used the [Massdrop](https://keyboard-configurator.massdrop.com/ext/ergodox/assembly.php) assembly instructions as a reference. If this is your first soldering project it's worth flipping through the [Soldering is Easy (8 page pdf)]( https://mightyohm.com/files/soldercomic/FullSolderComic_EN.pdf )
 
 [<img src="/images/ergodox/parts_pcb_acrylic_keys_caps_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/parts_pcb_acrylic_keys_caps.jpg)
 
 ## Tools
 
+{::comment}
 [<img src="/images/ergodox/null_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/null.jpg)
+{:/comment}
 
-- A digitally temperature regulated soldering iron - [amazon]( http://amzn.to/2cAUvrr ) (there are cheaper analog or non-regulated stations available, but it's much more difficult to get consistent results)
-- A tube of solder - [amazon]( http://amzn.to/2cAXe47 )
-- Tweezers - [amazon]( http://amzn.to/2cAV9Wb )
-- A magnifier and helping hand - [amazon]( http://amzn.to/2cAUfJ2 ) (a [multi-purpose hobby vise]( http://amzn.to/2cAUzHW) isn't necessary, but it sure is nice)
-- 20-30 gauge wire stripping tool - [amazon]( http://amzn.to/2cAV84l )
-- Flush cut wire trimmers - [amazon]( http://amzn.to/2cATtvy )
+- [Digitally temperature regulated soldering iron]( http://amzn.to/2cAUvrr )
+- [Solder]( http://amzn.to/2cAXe47 )
+- [Tweezers]( http://amzn.to/2cAV9Wb )
+- [Helping hand ]( http://amzn.to/2cAUfJ2 ) or [multi-purpose hobby vise]( http://amzn.to/2cAUzHW )
+- [20-30 gauge wire stripping tool]( http://amzn.to/2cAV84l )
+- [Flush cut wire trimmers]( http://amzn.to/2cATtvy )
 
 
 ## For THT diodes
@@ -210,13 +213,15 @@ Clip the leads with a pair of flush cut trimmers and press the diode bodies flat
 
 [<img src="/images/ergodox/assembly_diode_clip_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/assembly_diode_clip.jpg)
 
+{::comment}
 [<img src="/images/ergodox/null_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/null.jpg)
+{:/comment}
 
 ## For SMT diodes
 
 Solder a diode below each of the keyswitch sockets. Confirm that each diode is oriented so that the cathode, marked with a white line, is closer to the square solder pad
 
-https://learn.sparkfun.com/tutorials/polarity/diode-and-led-polarity
+[https://learn.sparkfun.com/tutorials/polarity/diode-and-led-polarity](https://learn.sparkfun.com/tutorials/polarity/diode-and-led-polarity)
 
 ## Resistors
 
@@ -227,7 +232,7 @@ The resistors are color coded. (relevant [xkcd]( https://xkcd.com/227/ ))
 
 ## TRRS Connector (3.5mm audio jack)
 
-Populate the jumpers as shown. These are needed to reuse the same PCB for reused right and left hands
+Populate the jumpers as shown. These are needed to reuse the same PCB for left and right hands
 
 [<img src="/images/ergodox/assembly_trrs_jumpers_stuffed_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/assembly_trrs_jumpers_stuffed.jpg)
 
@@ -261,7 +266,7 @@ I rebuilt the [firmware]( https://github.com/benblazak/ergodox-firmware ) to gen
 
 [<img src="/images/ergodox/troubleshoot_keytest.png" style="width: 480px;" align="center"/>](/images/ergodox/troubleshoot_keytest.png)
 
-After a quick visual inspection to verify that the diodes were all oriented correctly, I brought up the [schematic]( https://github.com/bishboria/ErgoDox/tree/master/ErgoDOX%20pcb )
+After a quick visual inspection to verify that the diodes were all oriented correctly, I brought up the [board file]( https://github.com/bishboria/ErgoDox/tree/master/ErgoDOX%20pcb )
 
 [<img src="/images/ergodox/troubleshoot_schematic.png" style="width: 480px;" align="center"/>](/images/ergodox/troubleshoot_schematic.png)
 
@@ -269,11 +274,13 @@ When the firmware performs a scan it pulls each column low in turn. While a give
 
 Since each row net surfaces only at the IO expander and at the switches of that row, I had only to check for solder bridges at those points. I found a solder bridge between a switch contact and a mounting hole. The mounting hole didn't have any external cladding but on inspection with a meter I found that the solder bridge was shorting directly to the ground plane.
 
+{::comment}
+
 # Conclusion
 
-I didn't wind up using this thing. I have a Surface Pro 4 and the difference between that and an ergodox is too big to traverse on a daily basis. It was still a fun project.
+I have a Surface Pro 4 and the difference between that and an ergodox is too big to traverse on a daily basis. It was still a fun project.
 
-{::comment}
+
 on plugging in the left side, the keyboard behaved funny, opening the win
 +x menu
 I edited the firmware to generate a 'z' from what had been the windows key and got a spray of "bzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvb"
