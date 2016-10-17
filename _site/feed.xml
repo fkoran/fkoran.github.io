@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Forrest Koran</title>
+    <description></description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 17 Oct 2016 15:34:30 -0700</pubDate>
+    <lastBuildDate>Mon, 17 Oct 2016 15:34:30 -0700</lastBuildDate>
+    <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>Getting started with the Intel Edison</title>
+        <description>&lt;p&gt;With the Sparkfun breakout blocks the Intel Edison becomes a compact, powerful, mechanically robust target board for robotics&lt;/p&gt;
+
+&lt;p&gt;Parts list:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sparkfun.com/products/13024&quot;&gt;Intel Edison&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sparkfun.com/products/13045&quot;&gt;Sparkfun base block&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sparkfun.com/products/13033&quot;&gt;Sparkfun 9DoF IMU block with the ST Micro LSM9DS0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ubilinux has been a popular distribution for the Edison in the past. As of June 2016, Emutex no longer supports Ubilinux on Edison.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.yoctoproject.org/&quot;&gt;Yocto&lt;/a&gt; is the distribution&lt;/p&gt;
+
+&lt;h1 id=&quot;installing-yocto&quot;&gt;Installing Yocto:&lt;/h1&gt;
+
+&lt;p&gt;Plug both cables into the base block&lt;/p&gt;
+
+&lt;p&gt;Update the firmware, create a password, and connect to wifi as described here:
+&lt;a href=&quot;https://software.intel.com/en-us/get-started-edison-windows-step2&quot;&gt;https://software.intel.com/en-us/get-started-edison-windows-step2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Connect to the Edison using TeraTerm, putty, or GNU screen&lt;/p&gt;
+
+&lt;p&gt;Although branded as a system to compile custom OS images for your target board, Yocto also includes a conventional, apt-like package manager. No repositories are included by default, so you’ll need to add them like so:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;src/gz all http://repo.opkg.net/edison/repo/all&quot;           &amp;gt;&amp;gt; /etc/opkg/base-feeds.conf
+echo &quot;src/gz edison http://repo.opkg.net/edison/repo/edison&quot;     &amp;gt;&amp;gt; /etc/opkg/base-feeds.conf 
+echo &quot;src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32&quot; &amp;gt;&amp;gt; /etc/opkg/base-feeds.conf
+opkg update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A full list of packages  available through opkg can be found &lt;a href=&quot;http://repo.opkg.net/edison/repo/core2-32/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;installing-packages---numpy-pyplot-smbus-and-scipy&quot;&gt;Installing Packages - numpy, pyplot, smbus and scipy:&lt;/h1&gt;
+
+&lt;p&gt;We’ll need the smbus package to communicate with the LSM9DS0. Git and screen will be convenient.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;opkg install git screen python-smbus
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Scipy can be installed from pip. You’ll see some error messages about not having support for HTTPS, but that’s okay.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install --upgrade pip
+pip install numpy scipy matplotlib
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;plotting-acceleration&quot;&gt;Plotting Acceleration:&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/random/hello_imu.png&quot;&gt;&lt;img src=&quot;/images/random/hello_imu.png&quot; style=&quot;width: 200px;&quot; align=&quot;right&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You’ll need to find python drivers for the LSM9DS0. As of October 2016, you can find a driver &lt;a href=&quot;git clone https://github.com/oresat/reaction-wheels.git&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I’ve uploaded a python script to read and plot data from the IMU at this &lt;a href=&quot;https://gist.github.com/fkoran/d46e720500a208c3bcbef88e03954f63&quot;&gt;gist&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 17 Oct 2016 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2016/10/17/scipy-yocto-edison/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/10/17/scipy-yocto-edison/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Git SSH Permissions</title>
+        <description>&lt;!-- Need better formatting for &lt;code&gt; blocks
+syntax highlighting would be nice --&gt;
+
+&lt;p&gt;Your keys might be generated and shared correctly, but git wants to enforce good security practice by demanding that your private key not be writable by other users on your system.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fkoran@host~/$ git push
+...
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0770 for '/home/fkoran/.ssh/id_rsa' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key &quot;/home/fkoran/.ssh/id_rsa&quot;: bad permissions
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+fkoran@host:~/$ ls -l ~/.ssh/id_rsa
+-rwxrwx--- 1 fkoran fkoran 3326 Jan  6  2016 /home/fkoran/.ssh/id_rsa
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To fix this, use &lt;a href=&quot;http://linux.die.net/man/1/chmod&quot;&gt;chmod&lt;/a&gt; to remove write permissions for users in the “group” and “other” categories.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fkoran@host:~/$ chmod go-w ~/.ssh/id_rsa
+fkoran@host:~/$ ls -l ~/.ssh/id_rsa
+-rwxr-x--- 1 fkoran fkoran 3326 Jan  6  2016 /home/fkoran/.ssh/id_rsa
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;More detailed information can be found &lt;a href=&quot;http://bodhizazen.net/Tutorials/SSH_keys#Login&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 13 Sep 2016 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2016/09/13/git-ssh-permissions-too-open/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/13/git-ssh-permissions-too-open/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Ergodox Build</title>
+        <description>&lt;!-- Need photos for:
+- keyswitch layout inc. edges with ambiguous orientation
+- finished product
+- shot of the tools
+- pcb, layer 3, and switches alone
+- format tables, generate small images --&gt;
+
+&lt;!-- [&lt;img src=&quot;/images/ergodox/beauty_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot;/&gt;](/images/ergodox/beauty.jpg) --&gt;
+
+&lt;p&gt;&lt;a href=&quot;#parts&quot;&gt;Parts&lt;/a&gt; |
+&lt;a href=&quot;#case&quot;&gt;Case&lt;/a&gt; |
+&lt;a href=&quot;#assembly-instructions&quot;&gt;Assembly&lt;/a&gt; |
+&lt;a href=&quot;#troubleshooting&quot;&gt;Troubleshooting&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;parts&quot;&gt;Parts&lt;/h1&gt;
+
+&lt;p&gt;I purchased parts on DigiKey per the &lt;a href=&quot;http://ergodox.org&quot;&gt;ergodox.org&lt;/a&gt; list, which I’ll reproduce here since that site is currently offline&lt;/p&gt;
+
+&lt;!-- | Ergodox PCB 							| [mechanicalkeyboards.com]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;p=537 ) 			|									|
+| Teesny 2.0 with headers 					| [mechanicalkeyboards.com]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;p=568 ) 			|									|
+| 10x Gateron Brown Keyswitch - Plate Mount - Pack of 10	| [mechanicalkeyboards.com]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;p=1640 ) 			|									|
+| DSA Keycaps - Ergodox Base Set and Ergodox Modifier Set 	| [pimpmykeyboard.com]( http://pimpmykeyboard.com/dsa-pbt-abs-blank-keycap-sets/ ) 					|									|
+| 4 Conductor 3.5mm TRRS Audio Cable 				| [amazon]( http://amzn.to/2cAZh8s )											|									|
+| CP-43514 4 Conductor 3.5mm TRRS Audio Jack 			| [digikey]( http://www.digikey.com/product-detail/en/cui-inc/SJ-43514/CP-43514-ND/368146 )				|									|
+| WM17115-ND USB Mini-B Receptacle 				| [digikey]( http://www.digikey.com/product-detail/en/molex-llc/0548190519/WM17115-ND/773802 ) 				| **often out of stock** 						|
+| MCP23018 IO Expander 						| [digikey]( http://www.digikey.com/product-detail/en/microchip-technology/MCP23018-E-SP/MCP23018-E-SP-ND/1999505 )	|									|
+| 0.1uF Through-hole Ceramic Capacitor 				| [digikey]( http://www.digikey.com/product-detail/en/vishay-bc-components/K104K10X7RF5UH5/BC2665CT-ND/2356879 ) 	|									|
+| 2x 2.2kΩ Through-hole Resistor 				| [digikey]( http://www.digikey.com/product-detail/en/yageo/CFR-25JB-52-2K2/2.2KQBK-ND/666 ) 				|									|
+| 4x 220Ω Through-hole Resistor 				| [digikey]( http://www.digikey.com/product-detail/en/yageo/CFR-25JB-52-220R/220QBK-ND/1295 ) 				|									|
+| &lt;strike&gt;100x Axial Through-hole Diode 			| [digikey]( http://www.digikey.com/product-detail/en/fairchild-semiconductor/1N4148/1N4148FS-ND/458603 )&lt;/strike&gt; 	| **recommend substituting the surface mount diodes listed below:**	|
+| 100x SOT123 Surface Mount Diode 				| [digikey]( http://www.digikey.com/product-detail/en/diodes-incorporated/1N4148W-7-F/1N4148W-FDICT-ND/815280 ) 	|									|
+| *3mm Green LED 						| [digikey]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4236N/160-1144-ND/214443 ) (optional)* 		|									|
+| *3mm Yellow LED 						| [digikey]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4256N/160-1147-ND/151820 ) (optional)* 		|									|
+| *3mm Red LED 							| [digikey]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4266N/160-1034-ND/121770 ) (optional)* 		|									| --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ergodox PCB - &lt;a href=&quot;https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;amp;p=537&quot;&gt;mechanicalkeyboards.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Teesny 2.0 with headers - &lt;a href=&quot;https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;amp;p=568&quot;&gt;mechanicalkeyboards.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;10x Gateron Brown Keyswitch - Plate Mount - Pack of 10 - &lt;a href=&quot;https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;amp;p=1640&quot;&gt;mechanicalkeyboards.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;DSA Keycaps - Ergodox Base Set and Ergodox Modifier Set - &lt;a href=&quot;http://pimpmykeyboard.com/dsa-pbt-abs-blank-keycap-sets/&quot;&gt;pimpmykeyboard.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;4 Conductor 3.5mm TRRS Audio Cable - &lt;a href=&quot;http://amzn.to/2cAZh8s&quot;&gt;amazon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;CP-43514 4 Conductor 3.5mm TRRS Audio Jack - &lt;a href=&quot;http://www.digikey.com/product-detail/en/cui-inc/SJ-43514/CP-43514-ND/368146&quot;&gt;digikey&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;WM17115-ND USB Mini-B Receptacle - &lt;a href=&quot;http://www.digikey.com/product-detail/en/molex-llc/0548190519/WM17115-ND/773802&quot;&gt;digikey&lt;/a&gt; - &lt;strong&gt;often out of stock&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;MCP23018 IO Expander - &lt;a href=&quot;http://www.digikey.com/product-detail/en/microchip-technology/MCP23018-E-SP/MCP23018-E-SP-ND/1999505&quot;&gt;digikey&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;0.1uF Through-hole Ceramic Capacitor - &lt;a href=&quot;http://www.digikey.com/product-detail/en/vishay-bc-components/K104K10X7RF5UH5/BC2665CT-ND/2356879&quot;&gt;digikey&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;2x 2.2kΩ Through-hole Resistor - &lt;a href=&quot;http://www.digikey.com/product-detail/en/yageo/CFR-25JB-52-2K2/2.2KQBK-ND/666&quot;&gt;digikey&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;4x 220Ω Through-hole Resistor - &lt;a href=&quot;http://www.digikey.com/product-detail/en/yageo/CFR-25JB-52-220R/220QBK-ND/1295&quot;&gt;digikey&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;strike&gt;100x Axial Through-hole Diode&lt;/strike&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.digikey.com/product-detail/en/fairchild-semiconductor/1N4148/1N4148FS-ND/458603&quot;&gt;digikey&lt;/a&gt; - &lt;strong&gt;recommend substituting the surface mount diodes listed below:&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;100x SOT123 Surface Mount Diode - &lt;a href=&quot;http://www.digikey.com/product-detail/en/diodes-incorporated/1N4148W-7-F/1N4148W-FDICT-ND/815280&quot;&gt;digikey&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;3mm Green LED - &lt;a href=&quot;http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4236N/160-1144-ND/214443&quot;&gt;digikey&lt;/a&gt; (optional)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;3mm Yellow LED - &lt;a href=&quot;http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4256N/160-1147-ND/151820&quot;&gt;digikey&lt;/a&gt; (optional)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;3mm Red LED - &lt;a href=&quot;http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4266N/160-1034-ND/121770&quot;&gt;digikey&lt;/a&gt; (optional)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- &lt;table&gt;
+&lt;tr&gt;
+ &lt;td&gt;Ergodox PCB&lt;/td&gt;
+ &lt;td&gt;[mechanicalkeyboards.com]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;p=537 )/td&gt;
+ &lt;td&gt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;Teesny 2.0 with headers/td&gt;
+ &lt;td&gt;[mechanicalkeyboards.com]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;p=568 )/td&gt;
+ &lt;td&gt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;10x Gateron Brown Keyswitch - Plate Mount - Pack of 10/td&gt;
+ &lt;td&gt;[mechanicalkeyboards.com]( https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;p=1640 )/td&gt;
+ &lt;td&gt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;DSA Keycaps - Ergodox Base Set and Ergodox Modifier Set/td&gt;
+ &lt;td&gt;[pimpmykeyboard.com]( http://pimpmykeyboard.com/dsa-pbt-abs-blank-keycap-sets/ )/td&gt;
+ &lt;td&gt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;4 Conductor 3.5mm TRRS Audio Cable/td&gt;
+ &lt;td&gt;[amazon]( http://amzn.to/2cAZh8s )/td&gt;
+ &lt;td&gt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;CP-43514 4 Conductor 3.5mm TRRS Audio Jack/td&gt;
+ &lt;td&gt;[digikey]( http://www.digikey.com/product-detail/en/cui-inc/SJ-43514/CP-43514-ND/368146 )/td&gt;
+ &lt;td&gt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;WM17115-ND USB Mini-B Receptacle/td&gt;
+ &lt;td&gt;[digikey]( http://www.digikey.com/product-detail/en/molex-llc/0548190519/WM17115-ND/773802 )/td&gt;
+ &lt;td&gt;**often out of stock**/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;MCP23018 IO Expander/td&gt;
+ &lt;td&gt;[digikey]( http://www.digikey.com/product-detail/en/microchip-technology/MCP23018-E-SP/MCP23018-E-SP-ND/1999505 )/td&gt;
+ &lt;td&gt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;0.1uF Through-hole Ceramic Capacitor/td&gt;
+ &lt;td&gt;[digikey]( http://www.digikey.com/product-detail/en/vishay-bc-components/K104K10X7RF5UH5/BC2665CT-ND/2356879 )/td&gt;
+ &lt;td&gt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;2x 2.2kΩ Through-hole Resistor&lt;/td&gt;
+ &lt;td&gt;[digikey]( http://www.digikey.com/product-detail/en/yageo/CFR-25JB-52-2K2/2.2KQBK-ND/666 )&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;4x 220Ω Through-hole Resistor&lt;/td&gt;
+ &lt;td&gt;[digikey]( http://www.digikey.com/product-detail/en/yageo/CFR-25JB-52-220R/220QBK-ND/1295 )&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;&lt;strike&gt;100x Axial Through-hole Diode&lt;/td&gt;
+ &lt;td&gt;[digikey]( http://www.digikey.com/product-detail/en/fairchild-semiconductor/1N4148/1N4148FS-ND/458603 )&lt;/strike&gt;&lt;/td&gt;
+ &lt;td&gt;**recommend substituting the surface mount diodes listed below:**&lt;/td&gt;
+&lt;/tr&gt;
+&lt;&lt;tr&gt;
+ &lt;td&gt;100x SOT123 Surface Mount Diode&lt;/td&gt;
+ &lt;td&gt;[digikey]( http://www.digikey.com/product-detail/en/diodes-incorporated/1N4148W-7-F/1N4148W-FDICT-ND/815280 )&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;*3mm Green LED&lt;/td&gt;
+ &lt;td&gt;[digikey]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4236N/160-1144-ND/214443 )&lt;/td&gt;
+ &lt;td&gt;(optional)*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;*3mm Yellow LED&lt;/td&gt;
+ &lt;td&gt;[digikey]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4256N/160-1147-ND/151820 )&lt;/td&gt;
+ &lt;td&gt;(optional)*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;*3mm Red LED&lt;/td&gt;
+ &lt;td&gt;[digikey]( http://www.digikey.com/product-detail/en/lite-on-inc/LTL-4266N/160-1034-ND/121770 )&lt;/td&gt;
+ &lt;td&gt;(optional)*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt; --&gt;
+
+&lt;p&gt;I would recommend substituting surface mount parts for the THT diodes. They’re easier to solder and trim and will result in a cleaner final product with wider mechanical clearances. Unfortunately the mini-USB connecter often goes out of stock, so be aware that it may not be available.&lt;/p&gt;
+
+&lt;p&gt;I chose to use Gateron Brown switches. They seem widely regarded as a better quality clone of the gold standard Cherry MX brand and have a &lt;a href=&quot;http://www.wasdkeyboards.com/mechanical-keyboard-guide#best&quot;&gt;light, tactile throw&lt;/a&gt; without being clicky.&lt;/p&gt;
+
+&lt;p&gt;Note that a standard, stereo audio cable isn’t enough to connect the two sides. You need a four conductor TRRS cable (the extra aRRRR is for tip-ring-ring-sleeve) to carry GND, +5, and I²C SDA/SCL.&lt;/p&gt;
+
+&lt;p&gt;There are a couple standard keycap profiles. DSA is convenient because keys are &lt;a href=&quot;http://pimpmykeyboard.com/key-cap-family-specs/&quot;&gt;interchangable&lt;/a&gt; between rows. This was especially desirable because I planned to use the &lt;a href=&quot;http://chetansurpur.com/blog/2012/11/colemak.html&quot;&gt;Colemak&lt;/a&gt; layout, for which profiled keycaps would be hard to find&lt;/p&gt;
+
+&lt;h1 id=&quot;case&quot;&gt;Case&lt;/h1&gt;
+
+&lt;p&gt;I pulled what appear to be Litster’s original .DXF files from &lt;a href=&quot;https://github.com/bishboria/ErgoDox/tree/master/ErgoDox%20Acrylic%20Case&quot;&gt;bishboria’s github&lt;/a&gt; and exported them to SVG using Inkscape.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/ponoko.png&quot;&gt;&lt;img src=&quot;/images/ergodox/ponoko.png&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I had the acrylic cut at &lt;a href=&quot;https://www.ponoko.com/&quot;&gt;Ponoko&lt;/a&gt;. Unfortunately I made a mistake scaling one of the spacer layers in the process of tiling the SVGs onto a single panel, so I had to substitute some washers for L3-Left until I get access to a bandsaw or a 3D printer.&lt;/p&gt;
+
+&lt;p&gt;The SVGs are up on &lt;a href=&quot;https://github.com/fkoran/ergodox-acrylic-svg&quot;&gt;my github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/layer_all_left.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/layer_all_left_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;These are the layer thicknesses I used. The Gateron switches fit perfectly with 4.5mm acrylic on layer 3. Be sure if you’re using THT diodes to use a material for layer 4 that’s a bit thicker than 4.5mm.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Layer 1 (top) - 3mm&lt;/li&gt;
+  &lt;li&gt;Layer 2 (spacer) - 4.5mm&lt;/li&gt;
+  &lt;li&gt;Layer 3 (switch plate) - 4.5mm&lt;/li&gt;
+  &lt;li&gt;Layer 4 (spacer) - 4.5mm&lt;/li&gt;
+  &lt;li&gt;Layer 5 (bottom) - 3mm&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;assembly-instructions&quot;&gt;Assembly Instructions&lt;/h1&gt;
+
+&lt;p&gt;I used the &lt;a href=&quot;https://keyboard-configurator.massdrop.com/ext/ergodox/assembly.php&quot;&gt;Massdrop&lt;/a&gt; assembly instructions as a reference. If this is your first soldering project it’s worth flipping through the fantastic guide &lt;a href=&quot;https://mightyohm.com/files/soldercomic/FullSolderComic_EN.pdf&quot;&gt;Soldering is Easy (8 page pdf)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/parts_pcb_acrylic_keys_caps.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/parts_pcb_acrylic_keys_caps_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;tools&quot;&gt;Tools&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/null.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/null_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A digitally temperature regulated soldering iron - &lt;a href=&quot;http://amzn.to/2cAUvrr&quot;&gt;amazon&lt;/a&gt; (there are cheaper analog or non-regulated stations available, but it’s much more difficult to get consistent results)&lt;/li&gt;
+  &lt;li&gt;A tube of solder - &lt;a href=&quot;http://amzn.to/2cAXe47&quot;&gt;amazon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Tweezers - &lt;a href=&quot;http://amzn.to/2cAV9Wb&quot;&gt;amazon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A magnifier and helping hand - &lt;a href=&quot;http://amzn.to/2cAUfJ2&quot;&gt;amazon&lt;/a&gt; (a &lt;a href=&quot;http://amzn.to/2cAUzHW&quot;&gt;multi-purpose hobby vise&lt;/a&gt; isn’t necessary, but it sure is nice)&lt;/li&gt;
+  &lt;li&gt;20-30 gauge wire stripping tool - &lt;a href=&quot;http://amzn.to/2cAV84l&quot;&gt;amazon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Flush cut wire trimmers - &lt;a href=&quot;http://amzn.to/2cATtvy&quot;&gt;amazon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;for-tht-diodes&quot;&gt;For THT diodes&lt;/h2&gt;
+
+&lt;p&gt;Bend each diode into a U shape and populate the marked spaces below each of the keyswitch sockets&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/assembly_diodes_sharp_side.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/assembly_diodes_sharp_side_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Confirm that each diode is oriented so that the cathode, marked with a black ring, is closer to the square solder pad&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/assembly_diodes_magnified.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/assembly_diodes_magnified_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Clip the leads with a pair of flush cut trimmers and press the diode bodies flat against the PCB&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/assembly_diode_clip.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/assembly_diode_clip_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/null.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/null_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;for-smt-diodes&quot;&gt;For SMT diodes&lt;/h2&gt;
+
+&lt;p&gt;Solder a diode below each of the keyswitch sockets. Confirm that each diode is oriented so that the cathode, marked with a white line, is closer to the square solder pad&lt;/p&gt;
+
+&lt;p&gt;https://learn.sparkfun.com/tutorials/polarity/diode-and-led-polarity&lt;/p&gt;
+
+&lt;h2 id=&quot;resistors&quot;&gt;Resistors&lt;/h2&gt;
+
+&lt;p&gt;The resistors are color coded. (relevant &lt;a href=&quot;https://xkcd.com/227/&quot;&gt;xkcd&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/parts_resistor_2_2k.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/parts_resistor_2_2k_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/images/ergodox/parts_resistor_220ohm.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/parts_resistor_220ohm_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;trrs-connector-35mm-audio-jack&quot;&gt;TRRS Connector (3.5mm audio jack)&lt;/h2&gt;
+
+&lt;p&gt;Populate the jumpers as shown. These are needed to reuse the same PCB for reused right and left hands&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/assembly_trrs_jumpers_stuffed.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/assembly_trrs_jumpers_stuffed_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;io-expander&quot;&gt;IO Expander&lt;/h2&gt;
+
+&lt;p&gt;Populate the IO expander DIP as shown&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/assembly_mcu_cap.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/assembly_mcu_cap_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;teensy&quot;&gt;Teensy&lt;/h2&gt;
+
+&lt;p&gt;Cut and strip the spare USB mini-B cable to bridge from the PCB to the Teensy&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/assembly_usb_cut_alt.gif&quot;&gt;&lt;img src=&quot;/images/ergodox/assembly_usb_cut_alt.gif&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Plug the 12 pin inline headers into the right hand PCB and stack the Teesny 2.0 on top of them. Tack down two pins on opposing corners to hold the assembly in place before soldering the rest&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/assembly_complete_minus_keys.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/assembly_complete_minus_keys_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;keyswitches&quot;&gt;Keyswitches&lt;/h2&gt;
+
+&lt;p&gt;Plug the keyswitches into the layer 3 support plate. Place the support plate switch-side down on a table and align the PCB with the switch pins. Solder the switches down while the support plate is sandwiched between the keyswitches and the PCB.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/assembly_switches_alt.jpg&quot;&gt;&lt;img src=&quot;/images/ergodox/assembly_switches_alt_small.jpg&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;troubleshooting&quot;&gt;Troubleshooting&lt;/h2&gt;
+
+&lt;p&gt;The left side of the keyboard worked perfectly on the first try. As soon as I plugged in the right side my laptop started opening the Win+X menu.&lt;/p&gt;
+
+&lt;p&gt;I rebuilt the &lt;a href=&quot;https://github.com/benblazak/ergodox-firmware&quot;&gt;firmware&lt;/a&gt; to generate a ‘z’ from what had been the windows key and got a spray of “bzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvb”&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/troubleshoot_keytest.png&quot;&gt;&lt;img src=&quot;/images/ergodox/troubleshoot_keytest.png&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;After a quick visual inspection to verify that the diodes were all oriented correctly, I brought up the &lt;a href=&quot;https://github.com/bishboria/ErgoDox/tree/master/ErgoDOX%20pcb&quot;&gt;schematic&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/ergodox/troubleshoot_schematic.png&quot;&gt;&lt;img src=&quot;/images/ergodox/troubleshoot_schematic.png&quot; style=&quot;width: 480px;&quot; align=&quot;center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;When the firmware performs a scan it pulls each column low in turn. While a given column is low it checks each row to see if a closed switch is connecting the two. Komar has a good overview of this on his &lt;a href=&quot;http://blog.komar.be/how-to-make-a-keyboard-the-matrix/&quot;&gt;site&lt;/a&gt;. All the affected keys were on the ROW2 net.&lt;/p&gt;
+
+&lt;p&gt;Since each row net surfaces only at the IO expander and at the switches of that row, I had only to check for solder bridges at those points. I found a solder bridge between a switch contact and a mounting hole. The mounting hole didn’t have any external cladding but on inspection with a meter I found that the solder bridge was shorting directly to the ground plane.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;I didn’t wind up using this thing. I have a Surface Pro 4 and the difference between that and an ergodox is too big to traverse on a daily basis. It was still a fun project.&lt;/p&gt;
+
+&lt;!-- on plugging in the left side, the keyboard behaved funny, opening the win
++x menu
+I edited the firmware to generate a 'z' from what had been the windows key and got a spray of &quot;bzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvb&quot;
+I installed the keyboard test sw from passmark and confirmed that all keys on the bottom row were held down. Those keys retain the same position in colemak.
+visually it appears there might be a solder bridge on one of these keys, but it's between two vias that are shorted anyway
+there isn't an easy way for relevant pins to short
+was a diode installed backwards? check tomorrow
+
+after a quick visual inspection to verify that the diodes were all installe correctly, i bruoght up th schematic
+
+when the firmware performs a scan, it pulls each collumn low in turn, and checks each row to see if a switch is closed to connec the two
+
+since one row is always activve, at seems like one row is being held low
+
+this is easy, since each row line is connecte only to the input pin an the switches of that row, surfacing only at the switch holes
+
+there was a solder bridge from a switch contact to a m
+ounting hole. the mounting hole didn't have any visible cladding, but on probing with a meter, the sides of the hole are connected to ground
+
+iven how close these holes are and how poor many of our soldering skills are, I think it's likely that this kind of bridging is at fault for many stuck rows. [check the forums to see if this is the case?]
+
+replace stroke-width:[^;&quot;]* with stroke-width:0.01mm
+ --&gt;
+</description>
+        <pubDate>Tue, 06 Sep 2016 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2016/09/06/ergodox/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/06/ergodox/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

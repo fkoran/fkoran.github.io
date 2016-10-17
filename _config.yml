@@ -14,7 +14,7 @@ permalink: /:year/:month/:day/:title/
 
 gems: [jekyll-paginate]
 
-exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+exclude: ['build.sh', 'README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
 
 
