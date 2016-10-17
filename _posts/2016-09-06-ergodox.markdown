@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Ergodox Build
-redirect_from: "/landing"
 ---
 
 {::comment}
@@ -14,7 +13,7 @@ Need photos for:
 {:/comment}
 
 {::comment}
-![beauty shot](/images/ergodox/beauty_small.jpg)
+[<img src="/images/ergodox/beauty_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/beauty.jpg)
 {:/comment}
 
 [Parts](#parts) |
@@ -22,9 +21,7 @@ Need photos for:
 [Assembly](#assembly-instructions) |
 [Troubleshooting](#troubleshooting)
 
-Parts
-=====
-
+# Parts
 
 I purchased parts on DigiKey per the [ergodox.org]( http://ergodox.org ) list, which I'll reproduce here since that site is currently offline
 
@@ -159,18 +156,17 @@ Note that a standard, stereo audio cable isn't enough to connect the two sides. 
 
 There are a couple standard keycap profiles. DSA is convenient because keys are [interchangable]( http://pimpmykeyboard.com/key-cap-family-specs/) between rows. This was especially desirable because I planned to use the [Colemak]( http://chetansurpur.com/blog/2012/11/colemak.html ) layout, for which profiled keycaps would be hard to find
 
-Case
-====
+# Case
 
 I pulled what appear to be Litster's original .DXF files from [bishboria's github]( https://github.com/bishboria/ErgoDox/tree/master/ErgoDox%20Acrylic%20Case ) and exported them to SVG using Inkscape.
 
-![ponoko panel](/images/ergodox/ponoko.png)
+[<img src="/images/ergodox/ponoko.png" style="width: 480px;" align="center"/>](/images/ergodox/ponoko.png)
 
 I had the acrylic cut at [Ponoko]( https://www.ponoko.com/ ). Unfortunately I made a mistake scaling one of the spacer layers in the process of tiling the SVGs onto a single panel, so I had to substitute some washers for L3-Left until I get access to a bandsaw or a 3D printer.
 
 The SVGs are up on [my github]( https://github.com/fkoran/ergodox-acrylic-svg ).
 
-![stack of acrylic](/images/ergodox/layer_all_left_small.jpg)
+[<img src="/images/ergodox/layer_all_left_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/layer_all_left.jpg)
 
 These are the layer thicknesses I used. The Gateron switches fit perfectly with 4.5mm acrylic on layer 3. Be sure if you're using THT diodes to use a material for layer 4 that's a bit thicker than 4.5mm.
 
@@ -182,17 +178,15 @@ These are the layer thicknesses I used. The Gateron switches fit perfectly with 
 
 
 
-Assembly Instructions
-=====================
+# Assembly Instructions
 
 I used the [Massdrop](https://keyboard-configurator.massdrop.com/ext/ergodox/assembly.php) assembly instructions as a reference. If this is your first soldering project it's worth flipping through the fantastic guide [Soldering is Easy (8 page pdf)]( https://mightyohm.com/files/soldercomic/FullSolderComic_EN.pdf )
 
-![filler image of various parts](/images/ergodox/parts_pcb_acrylic_keys_caps_small.jpg)
+[<img src="/images/ergodox/parts_pcb_acrylic_keys_caps_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/parts_pcb_acrylic_keys_caps.jpg)
 
-Tools
------
+## Tools
 
-![tools](/images/ergodox/null_small.jpg)
+[<img src="/images/ergodox/null_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/null.jpg)
 
 - A digitally temperature regulated soldering iron - [amazon]( http://amzn.to/2cAUvrr ) (there are cheaper analog or non-regulated stations available, but it's much more difficult to get consistent results)
 - A tube of solder - [amazon]( http://amzn.to/2cAXe47 )
@@ -202,89 +196,80 @@ Tools
 - Flush cut wire trimmers - [amazon]( http://amzn.to/2cATtvy )
 
 
-For THT diodes
---------------
+## For THT diodes
 
 Bend each diode into a U shape and populate the marked spaces below each of the keyswitch sockets
 
-![stuffed diodes](/images/ergodox/assembly_diodes_sharp_side_small.jpg)
+[<img src="/images/ergodox/assembly_diodes_sharp_side_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/assembly_diodes_sharp_side.jpg)
 
 Confirm that each diode is oriented so that the cathode, marked with a black ring, is closer to the square solder pad
 
-![diode orientation](/images/ergodox/assembly_diodes_magnified_small.jpg)
+[<img src="/images/ergodox/assembly_diodes_magnified_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/assembly_diodes_magnified.jpg)
 
 Clip the leads with a pair of flush cut trimmers and press the diode bodies flat against the PCB
 
-![clipping](/images/ergodox/assembly_diode_clip_small.jpg)
+[<img src="/images/ergodox/assembly_diode_clip_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/assembly_diode_clip.jpg)
 
-![clipped and mashed diodes](/images/ergodox/null_small.jpg)
+[<img src="/images/ergodox/null_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/null.jpg)
 
-For SMT diodes
---------------
+## For SMT diodes
 
 Solder a diode below each of the keyswitch sockets. Confirm that each diode is oriented so that the cathode, marked with a white line, is closer to the square solder pad
 
 https://learn.sparkfun.com/tutorials/polarity/diode-and-led-polarity
 
-Resistors
----------
+## Resistors
 
 The resistors are color coded. (relevant [xkcd]( https://xkcd.com/227/ ))
 
-![2.2kohm w/ labels](/images/ergodox/parts_resistor_2_2k_small.jpg)
-![220ohm w/ labels](/images/ergodox/parts_resistor_220ohm_small.jpg)
+[<img src="/images/ergodox/parts_resistor_2_2k_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/parts_resistor_2_2k.jpg)
+[<img src="/images/ergodox/parts_resistor_220ohm_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/parts_resistor_220ohm.jpg)
 
-TRRS Connector (3.5mm audio jack)
-----------------------------------
+## TRRS Connector (3.5mm audio jack)
 
 Populate the jumpers as shown. These are needed to reuse the same PCB for reused right and left hands
 
-![TRRS and jumpers back to back](/images/ergodox/assembly_trrs_jumpers_stuffed_small.jpg)
+[<img src="/images/ergodox/assembly_trrs_jumpers_stuffed_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/assembly_trrs_jumpers_stuffed.jpg)
 
-IO Expander
------------
+## IO Expander
 
 Populate the IO expander DIP as shown
 
-![io expander populated](/images/ergodox/assembly_mcu_cap_small.jpg)
+[<img src="/images/ergodox/assembly_mcu_cap_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/assembly_mcu_cap.jpg)
 
-Teensy
-------
+## Teensy
 
 Cut and strip the spare USB mini-B cable to bridge from the PCB to the Teensy
 
-![usb.gif](/images/ergodox/assembly_usb_cut_alt.gif)
+[<img src="/images/ergodox/assembly_usb_cut_alt.gif" style="width: 480px;" align="center"/>](/images/ergodox/assembly_usb_cut_alt.gif)
 
 Plug the 12 pin inline headers into the right hand PCB and stack the Teesny 2.0 on top of them. Tack down two pins on opposing corners to hold the assembly in place before soldering the rest
 
-![complete but for the switches](/images/ergodox/assembly_complete_minus_keys_small.jpg)
+[<img src="/images/ergodox/assembly_complete_minus_keys_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/assembly_complete_minus_keys.jpg)
 
-Keyswitches
-----------
+## Keyswitches
 
 Plug the keyswitches into the layer 3 support plate. Place the support plate switch-side down on a table and align the PCB with the switch pins. Solder the switches down while the support plate is sandwiched between the keyswitches and the PCB.
 
-![switches in plate](/images/ergodox/assembly_switches_alt_small.jpg)
+[<img src="/images/ergodox/assembly_switches_alt_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/assembly_switches_alt.jpg)
 
-Troubleshooting
----------------
+## Troubleshooting
 
 The left side of the keyboard worked perfectly on the first try. As soon as I plugged in the right side my laptop started opening the Win+X menu. 
 
 I rebuilt the [firmware]( https://github.com/benblazak/ergodox-firmware ) to generate a 'z' from what had been the windows key and got a spray of "bzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvb"
 
-![screenshot of passmark keytest](/images/ergodox/troubleshoot_keytest.png)
+[<img src="/images/ergodox/troubleshoot_keytest.png" style="width: 480px;" align="center"/>](/images/ergodox/troubleshoot_keytest.png)
 
 After a quick visual inspection to verify that the diodes were all oriented correctly, I brought up the [schematic]( https://github.com/bishboria/ErgoDox/tree/master/ErgoDOX%20pcb )
 
-![schematic highlighting the ROW2 net](/images/ergodox/troubleshoot_schematic.png)
+[<img src="/images/ergodox/troubleshoot_schematic.png" style="width: 480px;" align="center"/>](/images/ergodox/troubleshoot_schematic.png)
 
 When the firmware performs a scan it pulls each column low in turn. While a given column is low it checks each row to see if a closed switch is connecting the two. Komar has a good overview of this on his [site](http://blog.komar.be/how-to-make-a-keyboard-the-matrix/). All the affected keys were on the ROW2 net.
 
 Since each row net surfaces only at the IO expander and at the switches of that row, I had only to check for solder bridges at those points. I found a solder bridge between a switch contact and a mounting hole. The mounting hole didn't have any external cladding but on inspection with a meter I found that the solder bridge was shorting directly to the ground plane.
 
-Conclusion
-==========
+# Conclusion
 
 I didn't wind up using this thing. I have a Surface Pro 4 and the difference between that and an ergodox is too big to traverse on a daily basis. It was still a fun project.
 
