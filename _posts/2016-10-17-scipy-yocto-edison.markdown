@@ -13,13 +13,13 @@ Parts list:
 
 Ubilinux has been a popular distribution for the Edison in the past. As of June 2016, Emutex no longer supports Ubilinux on Edison.
 
-[Yocto](https://www.yoctoproject.org/) is the distribution 
+[Yocto](https://www.yoctoproject.org/) is the distribution that Intel recommends
 
 # Installing Yocto:
 
 Plug both cables into the base block
 
-Update the firmware, create a password, and connect to wifi as described here:
+Update the firmware, create a password, and connect to WiFi as described here:
 [https://software.intel.com/en-us/get-started-edison-windows-step2](https://software.intel.com/en-us/get-started-edison-windows-step2)
 
 Connect to the Edison using TeraTerm, putty, or GNU screen
