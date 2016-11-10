@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-# tl;dr
-
 I'm passionate about working across layers of the hardware and software stack to solve problems and bring the best quality product to market.
 
 # Who I am
@@ -20,3 +18,4 @@ I have hands-on experience with board and silicon bring-up, feature validation, 
 |
 [Blog](/)
 
+GPG: [1515DF88](http://pgp.mit.edu/pks/lookup?op=get&search=0x8C97357081A89CCB)
