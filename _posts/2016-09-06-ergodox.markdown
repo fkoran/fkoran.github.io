@@ -16,12 +16,13 @@ Need photos for:
 [<img src="/images/ergodox/beauty_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/beauty.jpg)
 {:/comment}
 
-[Parts](#parts) |
+[Parts](#parts-list) |
 [Case](#case) |
 [Assembly](#assembly-instructions) |
-[Troubleshooting](#troubleshooting)
+[Troubleshooting](#troubleshooting) |
+[3D Printing](#d-printing)
 
-# Parts
+# Parts List
 
 I purchased parts on DigiKey per the [ergodox.org]( http://ergodox.org ) list, which I'll reproduce here since that site is currently offline
 
@@ -163,7 +164,7 @@ I pulled what appear to be Litster's original .DXF files from [bishboria's githu
 
 [<img src="/images/ergodox/ponoko.png" style="width: 480px;" align="center"/>](/images/ergodox/ponoko.png)
 
-I had the acrylic cut at [Ponoko]( https://www.ponoko.com/ ). Unfortunately I made a mistake scaling one of the spacer layers in the process of tiling the SVGs onto a single panel, so I had to substitute some washers for L3-Left until I get access to a bandsaw or a 3D printer.
+I had the files laser cut from acrylic at [Ponoko]( https://www.ponoko.com/ ). I made a mistake scaling one of the spacer layers in the process of tiling the SVGs onto a single panel, so I had to substitute a set of washers until I was able to print a [replacement](#d-printing).
 
 The SVGs are up on [my github]( https://github.com/fkoran/ergodox-acrylic-svg ).
 
@@ -258,7 +259,7 @@ Plug the keyswitches into the layer 3 support plate. Place the support plate swi
 
 [<img src="/images/ergodox/assembly_switches_alt_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/assembly_switches_alt.jpg)
 
-## Troubleshooting
+# Troubleshooting
 
 The left side of the keyboard worked perfectly on the first try. As soon as I plugged in the right side my laptop started opening the Win+X menu. 
 
@@ -272,36 +273,18 @@ After a quick visual inspection to verify that the diodes were all oriented corr
 
 When the firmware performs a scan it pulls each column low in turn. While a given column is low it checks each row to see if a closed switch is connecting the two. Komar has a good overview of this on his [site](http://blog.komar.be/how-to-make-a-keyboard-the-matrix/). All the affected keys were on the ROW2 net.
 
-Since each row net surfaces only at the IO expander and at the switches of that row, I had only to check for solder bridges at those points. I found a solder bridge between a switch contact and a mounting hole. The mounting hole didn't have any external cladding but on inspection with a meter I found that the solder bridge was shorting directly to the ground plane.
+Since each row net surfaces only at the IO expander and at the switches of that row, I had only to check for shorts at those points. The culprit was a solder bridge between a switch and an adjacent mounting hole.
+
+# 3D Printing
+
+I was able to get an extra layer printed in PLA at PSU's [LID Lab](http://psu-epl.github.io/). I used Landa's [svg2stl](http://svg2stl.com/) to rasterize and extrude the flat SVG to an STL file. To reduce print time I removed the ceiling and floor, exposing an attractive honeycomb fill pattern.
+
+[<img src="/images/ergodox/honeycomb_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/honeycomb.jpg)
 
 {::comment}
 
 # Conclusion
 
-I have a Surface Pro 4 and the difference between that and an ergodox is too big to traverse on a daily basis. It was still a fun project.
-
-
-on plugging in the left side, the keyboard behaved funny, opening the win
-+x menu
-I edited the firmware to generate a 'z' from what had been the windows key and got a spray of "bzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvbzzxcvb"
-I installed the keyboard test sw from passmark and confirmed that all keys on the bottom row were held down. Those keys retain the same position in colemak.
-visually it appears there might be a solder bridge on one of these keys, but it's between two vias that are shorted anyway
-there isn't an easy way for relevant pins to short
-was a diode installed backwards? check tomorrow
-
-after a quick visual inspection to verify that the diodes were all installe correctly, i bruoght up th schematic
-
-when the firmware performs a scan, it pulls each collumn low in turn, and checks each row to see if a switch is closed to connec the two
-
-since one row is always activve, at seems like one row is being held low
-
-this is easy, since each row line is connecte only to the input pin an the switches of that row, surfacing only at the switch holes
-
-there was a solder bridge from a switch contact to a m
-ounting hole. the mounting hole didn't have any visible cladding, but on probing with a meter, the sides of the hole are connected to ground
-
-iven how close these holes are and how poor many of our soldering skills are, I think it's likely that this kind of bridging is at fault for many stuck rows. [check the forums to see if this is the case?]
-
-replace stroke-width:[^;"]* with stroke-width:0.01mm
+[<img src="/images/ergodox/finished_small.jpg" style="width: 480px;" align="center"/>](/images/ergodox/finished.jpg)
 
 {:/comment}
